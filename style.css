@@ -183,3 +183,31 @@ nav a {
 .kart p {
     color: #555;
     }
+.fiyat-kartlari {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.fiyat-kart {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+
+.fiyat-kart h3 {
+    color: #b08d57;
+    margin-bottom: 15px;
+}
+
+
+.fiyat-kart p {
+    font-size: 18px;
+    color: #555;
+    }
