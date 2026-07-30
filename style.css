@@ -151,3 +151,35 @@ nav a {
     font-style: italic;
     letter-spacing: 1px;
     }
+.hizmet-kartlari {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.kart {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+
+.kart:hover {
+    transform: translateY(-5px);
+}
+
+
+.kart h3 {
+    color: #b08d57;
+    margin-bottom: 15px;
+}
+
+
+.kart p {
+    color: #555;
+    }
