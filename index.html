@@ -1,280 +1,288 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="tr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bedenin Molası | Evde Masaj</title>
+  <meta name="description" content="Bedenin Molası - Didim ve İzmir evde masaj hizmeti. Sade dokunuşlar.">
+  <style>
+    :root{
+      --bg:#f7f3ed;
+      --card:#ffffff;
+      --soft:#efe5d7;
+      --line:#d8c5ad;
+      --text:#292622;
+      --muted:#746b62;
+      --accent:#9f8567;
+      --accent-dark:#514333;
+      --shadow:0 8px 24px rgba(63,48,35,.08);
+    }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    .container{width:min(1100px,92%);margin:auto}
 
-<title>Bedenin Molası | Didim Evde Masaj Hizmeti</title>
+    header{
+      text-align:center;
+      padding:54px 0 30px;
+    }
+    .brand{
+      font-family:Georgia, serif;
+      font-size:clamp(34px,7vw,64px);
+      letter-spacing:5px;
+      line-height:1;
+    }
+    .tagline{
+      margin-top:14px;
+      color:var(--accent);
+      font-family:Georgia, serif;
+      font-size:20px;
+      letter-spacing:1px;
+    }
 
-<meta name="description" content="Bedenin Molası, Didim'de evde masaj hizmeti sunar. Klasik masaj, aromaterapi, Bali ve bölgesel masaj için randevu alın.">
+    .city-switch{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:32px auto 24px;
+      max-width:700px;
+    }
+    .city-btn{
+      border:1px solid var(--line);
+      background:var(--card);
+      color:var(--text);
+      padding:18px;
+      border-radius:12px;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .city-btn.active{
+      background:var(--soft);
+      border-color:var(--accent);
+    }
 
-<link rel="stylesheet" href="style.css">
+    .city-content{display:none}
+    .city-content.active{display:block}
 
+    .section{
+      background:rgba(255,255,255,.38);
+      border:1px solid rgba(216,197,173,.55);
+      border-radius:18px;
+      padding:28px;
+      margin:18px 0;
+    }
+    .section-title{
+      text-align:center;
+      font-family:Georgia,serif;
+      font-size:25px;
+      margin-bottom:22px;
+      letter-spacing:.5px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #eee4d8;
+      border-radius:14px;
+      padding:22px 16px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .location-card{
+      font-family:Georgia,serif;
+      font-size:19px;
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .massage-card h3{
+      font-family:Georgia,serif;
+      font-size:19px;
+      margin-bottom:14px;
+    }
+    .price-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      border-top:1px solid #eee4d8;
+      padding-top:10px;
+      margin-top:10px;
+      font-size:15px;
+    }
+    .price{font-weight:700}
+
+    .booking{
+      text-align:center;
+      background:var(--soft);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:30px 20px;
+      margin:28px 0 38px;
+    }
+    .booking h2{
+      font-family:Georgia,serif;
+      margin-bottom:8px;
+    }
+    .booking p{color:var(--muted);margin-bottom:18px}
+    .instagram{
+      display:inline-block;
+      text-decoration:none;
+      background:var(--accent-dark);
+      color:#fff;
+      padding:13px 22px;
+      border-radius:10px;
+      font-weight:700;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:10px 0 35px;
+      font-size:14px;
+    }
+
+    @media(max-width:760px){
+      .cards{grid-template-columns:1fr 1fr}
+      .section{padding:20px 14px}
+      .brand{letter-spacing:3px}
+    }
+    @media(max-width:480px){
+      header{padding-top:38px}
+      .cards{grid-template-columns:1fr 1fr}
+      .location-card{font-size:17px;min-height:74px}
+      .massage-card{padding:18px 10px}
+      .massage-card h3{font-size:17px}
+      .price-row{font-size:13px;flex-direction:column;gap:2px}
+    }
+  </style>
 </head>
 
-<body> <header>
-
-<h1>🌿 Bedenin Molası</h1>
-
-<p class="slogan">
-Evinizde profesyonel masaj deneyimi
-</p>
-
-<nav>
-<a href="#hizmetler">Hizmetler</a>
-<a href="#fiyatlar">Fiyatlar</a>
-<a href="#iletisim">İletişim</a>
-</nav>
-
-</header>
-
-
-<section class="hero">
-
-<h2>Didim'de Evinizin Konforunda Profesyonel Masaj Hizmeti</h2>
-
-<p>
-Adresinize gelerek rahatlama ve yenilenme deneyimini evinizde yaşayın.
-</p>
-
-<a class="whatsapp" href="https://wa.me/905012621920">
-WhatsApp'tan Randevu Al
-</a>
-
-<section id="hizmetler">
-
-<h2>Masaj Hizmetlerimiz</h2>
-
-<div class="hizmet-kartlari">
-
-<div class="kart">
-<h3>Klasik Masaj</h3>
-<p>
-Kas rahatlatma ve gevşeme için profesyonel uygulama.
-</p>
-</div>
-
-<div class="kart">
-<h3>Aromaterapi Masajı</h3>
-<p>
-Doğal yağlarla huzurlu ve rahatlatıcı masaj deneyimi.
-</p>
-</div>
-
-<div class="kart">
-<h3>Bali Masajı</h3>
-<p>
-Gevşeme ve yenilenme odaklı özel teknikler.
-</p>
-</div>
-
-<div class="kart">
-<h3>Bölgesel Masaj</h3>
-<p>
-Belirli bölgelere yönelik rahatlatıcı uygulama.
-</p>
-</div>
-
-</div>
-
-</section>
-<section id="fiyatlar">
-
-<h2>Fiyatlarımız</h2>
-
-<div class="fiyat-kartlari">
-
-<div class="fiyat-kart">
-<h3>Klasik Masaj</h3>
-<p>60 dakika: 800 TL</p>
-<p>90 dakika: 1100 TL</p>
-</div>
-
-
-<div class="fiyat-kart">
-<h3>Aromaterapi & Bali Masajı</h3>
-<p>60 dakika: 900 TL</p>
-<p>90 dakika: 1100 TL</p>
-</div>
-
-
-<div class="fiyat-kart">
-<h3>Bölgesel Masaj</h3>
-<p>30 dakika: 500 TL</p>
-<p>40 dakika: 600 TL</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="neden">
-
-<h2>Neden Bedenin Molası?</h2>
-
-<p>
-🌿 Evinizin konforunda profesyonel masaj deneyimi
-</p>
-
-<p>
-💆 İhtiyacınıza uygun kişisel masaj uygulamaları
-</p>
-
-<p>
-✨ Hijyenik ve güvenilir hizmet anlayışı
-</p>
-
-<p>
-🕒 Randevulu ve size özel zaman planlaması
-</p>
-<section id="yorumlar">
-
-<h2>Danışan Yorumları</h2>
-
-<p>
-<section id="bolge">
-
-<h2>Hizmet Bölgemiz</h2>
-
-<p>
-📍 Didim ve çevresinde evlere masaj hizmeti
-</p>
-
-<p>
-Altınkum • Akbük • Didim Merkez ve yakın bölgeler
-</p>
-
-<p>
-Randevu oluşturarak evinizin konforunda profesyonel masaj deneyimi yaşayabilirsiniz.
-</p>
-
-</section>
-</section>
-</section>
-  <section id="sss">
-
-<h2>Sık Sorulan Sorular</h2>
-
-<h3>Masaj hizmeti için evde ne hazırlamalıyım?</h3>
-<p>
-Sakin ve rahat bir ortam hazırlamanız yeterlidir.
-</p>
-
-
-<h3>Randevu nasıl oluşturabilirim?</h3>
-<p>
-WhatsApp üzerinden iletişime geçerek size uygun gün ve saat için randevu oluşturabilirsiniz.
-</p>
-
-
-<h3>Ödeme seçenekleri nelerdir?</h3>
-<p>
-Nakit, havale ve FAST ödeme seçenekleri bulunmaktadır.
-</p>
-
-
-<h3>Hangi saatlerde hizmet veriyorsunuz?</h3>
-<p>
-12:00 - 23:00 saatleri arasında randevulu hizmet verilmektedir.
-</p>
-
-
-  </section>
-</section> <section id="iletisim">
-
-<h2>Randevu ve İletişim</h2>
-
-<p>📍 Didim</p>
-
-<p>
-🕒 Çalışma Saatleri: 12:00 - 23:00
-</p>
-
-<p>
-💳 Nakit • Havale • FAST
-</p>
-
-<p>
-📞 0501 262 1920
-</p>
-<p>
-
-
-
-
-📷 Instagram:
-<a href="https://instagram.com/bedenin_molasi">
-@bedenin_molasi
-</a>
-</p>
-
-<p>
-Randevu için WhatsApp veya Instagram üzerinden ulaşabilirsiniz.
-  </p>
-</section> <footer>
-
-<p>© 2026 Bedenin Molası</p>
-
-<p>
-Didim Evde Masaj Hizmeti
-</p>
-
-</footer>
-<a class="whatsapp-fixed" href="https://wa.me/905012621920">
-💬 WhatsApp Randevu
-</a>
-
-<script src="script.js"></script>
-
+<body>
+  <header class="container">
+    <div class="brand">BEDENİN<br>MOLASI</div>
+    <div class="tagline">Sade dokunuşlar.</div>
+
+    <div class="city-switch">
+      <button class="city-btn active" onclick="showCity('didim', this)">DİDİM</button>
+      <button class="city-btn" onclick="showCity('izmir', this)">İZMİR</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- DİDİM -->
+    <div id="didim" class="city-content active">
+      <section class="section">
+        <h2 class="section-title">Hizmet Bölgeleri</h2>
+        <div class="cards">
+          <div class="card location-card">Yeşilkent</div>
+          <div class="card location-card">Altınkum</div>
+          <div class="card location-card">Cumhuriyet Meydanı</div>
+          <div class="card location-card">Yenihisar</div>
+          <div class="card location-card">Apollon</div>
+          <div class="card location-card">Mavişehir</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Masaj Türleri & Fiyatlar</h2>
+        <div class="cards">
+          <div class="card massage-card">
+            <h3>Klasik Masaj</h3>
+            <div class="price-row"><span>60 dk</span><span class="price">800 TL</span></div>
+            <div class="price-row"><span>90 dk</span><span class="price">1.100 TL</span></div>
+          </div>
+
+          <div class="card massage-card">
+            <h3>Aromaterapi</h3>
+            <div class="price-row"><span>60 dk</span><span class="price">900 TL</span></div>
+            <div class="price-row"><span>90 dk</span><span class="price">1.100 TL</span></div>
+          </div>
+
+          <div class="card massage-card">
+            <h3>Bali</h3>
+            <div class="price-row"><span>60 dk</span><span class="price">900 TL</span></div>
+            <div class="price-row"><span>90 dk</span><span class="price">1.100 TL</span></div>
+          </div>
+
+          <div class="card massage-card">
+            <h3>Bölgesel</h3>
+            <div class="price-row"><span>30 dk</span><span class="price">500 TL</span></div>
+            <div class="price-row"><span>40 dk</span><span class="price">600 TL</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- İZMİR -->
+    <div id="izmir" class="city-content">
+      <section class="section">
+        <h2 class="section-title">İzmir Hizmet Bilgileri</h2>
+        <div class="cards">
+          <div class="card location-card">İzmir</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Masaj Türleri & Fiyatlar</h2>
+        <div class="cards">
+          <div class="card massage-card">
+            <h3>Klasik / Derin Doku</h3>
+            <div class="price-row"><span>40 dk</span><span class="price">600 TL</span></div>
+            <div class="price-row"><span>60 dk</span><span class="price">800 TL</span></div>
+          </div>
+
+          <div class="card massage-card">
+            <h3>Bölgesel</h3>
+            <div class="price-row"><span>30 dk</span><span class="price">400 TL</span></div>
+            <div class="price-row"><span>40 dk</span><span class="price">500 TL</span></div>
+          </div>
+
+          <div class="card massage-card">
+            <h3>Bali</h3>
+            <div class="price-row"><span>35 dk</span><span class="price">550 TL</span></div>
+            <div class="price-row"><span>45 dk</span><span class="price">650 TL</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="booking">
+      <h2>Randevu Al</h2>
+      <p>Randevu ve bilgi için Instagram üzerinden ulaşabilirsiniz.</p>
+      <a class="instagram" href="https://www.instagram.com/bedenin_molasi/" target="_blank" rel="noopener">
+        Instagram'dan İletişime Geç
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Bedenin Molası<br>
+    Didim & İzmir Evde Masaj Hizmeti
+  </footer>
+
+  <script>
+    function showCity(city, button){
+      document.querySelectorAll('.city-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.city-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(city).classList.add('active');
+      button.classList.add('active');
+    }
+  </script>
 </body>
-
 </html>
+
