@@ -272,3 +272,15 @@ footer {
 .hizmet span {
   white-space: nowrap;
 }
+.hizmet-alanı {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hizmet-alanı span {
+  white-space: nowrap;
+    }
